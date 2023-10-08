@@ -1,5 +1,6 @@
 package com.mutabaah.Mutabaah.Backend.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.*
 import java.time.LocalDateTime
 import java.util.Date
@@ -23,6 +24,9 @@ data class Student(
     @ManyToOne
     @JoinColumn(name = "schedule_id")
     val schedule: Schedule?,
+
+    @OneToMany(mappedBy = "student", cascade = [CascadeType.ALL], orphanRemoval = true)
+    val attendances: List<Attendance> = mutableListOf(),
 
     @ManyToMany
     @JoinTable(

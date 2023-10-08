@@ -18,7 +18,7 @@ import java.util.UUID
 class ScheduleController(val scheduleService: ScheduleService){
 
     @GetMapping
-    fun getAllSchedule(): ResponseEntity<out ResponseDto<out List<Schedule>?>> {
+    fun getAllSchedules(): ResponseEntity<out ResponseDto<out List<Schedule>?>> {
         try {
             val response = DtoUtil.responseDtoSuccess(scheduleService.findAllSchedule())
             return ResponseEntity(response, HttpStatus.OK)

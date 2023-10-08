@@ -1,5 +1,6 @@
 package com.mutabaah.Mutabaah.Backend.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.*
 import java.time.LocalDateTime
 import java.util.Date
@@ -24,10 +25,6 @@ data class User (
     // relationship
     @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL])
     val schedules: List<Schedule> = mutableListOf(),
-
-    @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL])
-    val attendances: List<Attendance> = mutableListOf()
-
 ) {
 }
 
