@@ -2,7 +2,6 @@ package com.mutabaah.Mutabaah.Backend.entity
 
 import jakarta.persistence.*
 import java.time.LocalDateTime
-import java.util.Date
 import java.util.UUID
 
 @Entity
@@ -13,7 +12,7 @@ data class User (
     val id: UUID?,
     val name: String?,
     val username: String?,
-    val password: String?,
+    var password: String?,
     @Enumerated(EnumType.STRING)
     val role:  UserRole?,
     @Temporal(TemporalType.TIMESTAMP)
@@ -24,10 +23,6 @@ data class User (
     // relationship
     @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL])
     val schedules: List<Schedule> = mutableListOf(),
-
-    @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL])
-    val attendances: List<Attendance> = mutableListOf()
-
 ) {
 }
 

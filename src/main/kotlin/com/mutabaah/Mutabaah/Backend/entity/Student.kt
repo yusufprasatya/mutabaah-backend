@@ -24,13 +24,11 @@ data class Student(
     @JoinColumn(name = "schedule_id")
     val schedule: Schedule?,
 
-    @ManyToMany
-    @JoinTable(
-        name = "student_memorization",
-        joinColumns = [JoinColumn(name = "student_id")],
-        inverseJoinColumns = [JoinColumn(name = "memorization_id")]
-    )
-    val memorizations: MutableList<Memorization> = mutableListOf()
+    @OneToMany(mappedBy = "student", cascade = [CascadeType.ALL], orphanRemoval = true)
+    val attendances: List<Attendance> = mutableListOf(),
+
+    @OneToMany(mappedBy = "student", cascade = [CascadeType.ALL], orphanRemoval = true)
+    val memorizations: List<Memorization> = mutableListOf()
 ) {
 }
 

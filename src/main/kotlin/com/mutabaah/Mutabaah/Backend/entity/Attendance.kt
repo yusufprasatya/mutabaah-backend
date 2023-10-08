@@ -1,6 +1,8 @@
 package com.mutabaah.Mutabaah.Backend.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.*
+import lombok.NoArgsConstructor
 import java.time.LocalDateTime
 import java.util.Date
 import java.util.UUID
@@ -20,7 +22,8 @@ data class Attendance (
 
     // relationship
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    val user: User?
+    @JoinColumn(name = "student_id")
+    @JsonIgnore
+    val student: Student?
 ) {
 }

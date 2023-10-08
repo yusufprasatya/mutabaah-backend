@@ -1,5 +1,6 @@
 package com.mutabaah.Mutabaah.Backend.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.*
 import java.time.LocalDateTime
 import java.util.UUID
@@ -21,8 +22,9 @@ data class Memorization(
     @Temporal(TemporalType.TIMESTAMP)
     val updatedAt: LocalDateTime?,
 
-    @ManyToMany(mappedBy = "memorizations")
-    val students: MutableList<Student> = mutableListOf()
+    @ManyToOne
+    @JsonIgnore
+    val student: Student?
     ) {
 }
 
