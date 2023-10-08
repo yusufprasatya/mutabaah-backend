@@ -3,6 +3,7 @@ package com.mutabaah.Mutabaah.Backend.dto
 import com.mutabaah.Mutabaah.Backend.entity.User
 import com.mutabaah.Mutabaah.Backend.entity.UserRole
 import java.time.LocalDateTime
+
 data class UserDto(
     val name: String?,
     val username: String?,

@@ -2,8 +2,6 @@ package com.mutabaah.Mutabaah.Backend.dto
 
 import com.mutabaah.Mutabaah.Backend.entity.Gender
 import com.mutabaah.Mutabaah.Backend.entity.Student
-import com.mutabaah.Mutabaah.Backend.entity.UserRole
-import com.mutabaah.Mutabaah.Backend.util.DateUtil
 import org.springframework.format.annotation.DateTimeFormat
 import java.time.LocalDateTime
 import java.util.*

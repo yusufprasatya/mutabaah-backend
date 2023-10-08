@@ -9,6 +9,7 @@ import java.util.UUID
 
 @Service
 class UserService(val userRepository: UserRepository, val passwordEncoder: PasswordEncoder) {
+
     fun findAllUser(): List<User> = userRepository.findAll()
 
     fun findUserById(userId: UUID): User = userRepository.findById(userId).orElseThrow{

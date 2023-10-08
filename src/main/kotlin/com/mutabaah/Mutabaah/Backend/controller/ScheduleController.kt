@@ -2,11 +2,7 @@ package com.mutabaah.Mutabaah.Backend.controller
 
 import com.mutabaah.Mutabaah.Backend.dto.*
 import com.mutabaah.Mutabaah.Backend.entity.Schedule
-import com.mutabaah.Mutabaah.Backend.entity.Student
-import com.mutabaah.Mutabaah.Backend.entity.User
 import com.mutabaah.Mutabaah.Backend.service.ScheduleService
-import com.mutabaah.Mutabaah.Backend.service.StudentService
-import com.mutabaah.Mutabaah.Backend.service.UserService
 import com.mutabaah.Mutabaah.Backend.util.DtoUtil
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

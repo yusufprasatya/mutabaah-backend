@@ -25,6 +25,5 @@ data class Schedule (
 
     @OneToMany(mappedBy = "schedule", cascade = [CascadeType.ALL])
     val students: List<Student> = mutableListOf()
-
 ) {
 }

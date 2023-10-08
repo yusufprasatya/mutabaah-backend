@@ -5,14 +5,13 @@ import com.mutabaah.Mutabaah.Backend.entity.Attendance
 import com.mutabaah.Mutabaah.Backend.exception.UserNotFoundException
 import com.mutabaah.Mutabaah.Backend.repository.AttendanceRepository
 import com.mutabaah.Mutabaah.Backend.repository.StudentRepository
-import com.mutabaah.Mutabaah.Backend.repository.UserRepository
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 import java.util.*
-import kotlin.math.truncate
 
 @Service
 class AttendanceService(val attendanceRepository: AttendanceRepository, val studentRepository: StudentRepository) {
+
     fun findAllAttendances(): List<Attendance> = attendanceRepository.findAll()
 
     fun findAttendanceById(id: UUID): Attendance = attendanceRepository.findById(id).orElseThrow{
