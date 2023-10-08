@@ -13,7 +13,7 @@ data class User (
     val id: UUID?,
     val name: String?,
     val username: String?,
-    val password: String?,
+    var password: String?,
     @Enumerated(EnumType.STRING)
     val role:  UserRole?,
     @Temporal(TemporalType.TIMESTAMP)
